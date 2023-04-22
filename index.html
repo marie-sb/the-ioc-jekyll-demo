@@ -1,5 +1,39 @@
 ---
 layout: default
-title: Homepage
+title: Home
+news:
+-   category: promo
+    date: 13th Jan
+    title: Big Sale
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eligendi accusamus.
+    url: https://www.sale.com
+-   category: drop
+    date: 01st Jan
+    title: New Year Collection
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eligendi accusamus.
+    url: https://www.sale.com/new-year-collection
+-   category: store
+    date: 20th Dec
+    title: Store Opening at Ocean Side
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eligendi accusamus.
+    url: https://www.instagram.com/our-store
+
 ---
-<h1>Welcome to your homepage!</h1>
+<section class="grid-spaceBetween padded bg-featured latest-news">
+    {% for item in page.news %}
+    <!-- First Card -->
+    <div class="col-4_xs-8">
+    <div class="card">
+      <div class="bg-image"> 
+        <span> {{item.category}} </span>
+      </div>
+      <div class="post-info">
+        <p class="date"> {{item.date}} </p>
+        <h3> {{item.title}} </h3>
+        <p> {{item.description}}</p>
+          <a href="{{item.url}}"> Find out more &nbsp &#10141; </a>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+  </section>
